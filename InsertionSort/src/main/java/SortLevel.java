@@ -17,6 +17,17 @@ public class SortLevel {
         return array ;
     }
 
+    public static ArrayList<Integer> KnuthSequence (int array_size ){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        int n = 1;
+        while (n < array_size) {
+            list.add(0,n);
+            n = n * 3 + 1;
+        }
+        return list;
+    }
+
+
     public static void swap(int[] arr, int fromIdx, int toIdx) {
         int a = arr[fromIdx];
         arr[fromIdx] = arr[toIdx];
