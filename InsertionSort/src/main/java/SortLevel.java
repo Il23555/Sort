@@ -17,13 +17,16 @@ public class SortLevel {
         return array ;
     }
 
-    public static ArrayList<Integer> KnuthSequence (int array_size ){
+    public static ArrayList<Integer> KnuthSequence(int array_size ) {
         ArrayList<Integer> list = new ArrayList<Integer>();
-        int n = 1;
+        list.add(1);
+
+        int n = 4;
         while (n < array_size) {
             list.add(0,n);
             n = n * 3 + 1;
         }
+
         return list;
     }
 
