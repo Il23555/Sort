@@ -13,13 +13,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/SortLevel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SimpleSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="556">
+              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/SimpleSortTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -38,8 +44,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/SortLevel.java" />
         <option value="$PROJECT_DIR$/src/test/java/SortLevelTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SortLevel.java" />
+        <option value="$PROJECT_DIR$/src/test/java/SimpleSortTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SimpleSort.java" />
       </list>
     </option>
   </component>
@@ -101,7 +109,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561032835705" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561102056098" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -128,21 +136,31 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SortLevelTest.bubbleSortStep">
-    <configuration name="SortLevelTest.bubbleSortStep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SimpleSortTest.selectionSort">
+    <configuration name="SimpleSortTest.bubbleSortStep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SimpleSort" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SortLevelTest" />
+      <option name="MAIN_CLASS_NAME" value="SimpleSortTest" />
       <option name="METHOD_NAME" value="bubbleSortStep" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SortLevelTest.selectionSortStep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleSortTest.selectionSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SimpleSort" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SortLevelTest" />
+      <option name="MAIN_CLASS_NAME" value="SimpleSortTest" />
+      <option name="METHOD_NAME" value="selectionSort" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleSortTest.selectionSortStep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SimpleSort" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SimpleSortTest" />
       <option name="METHOD_NAME" value="selectionSortStep" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -151,8 +169,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SortLevelTest.bubbleSortStep" />
-        <item itemvalue="JUnit.SortLevelTest.selectionSortStep" />
+        <item itemvalue="JUnit.SimpleSortTest.selectionSort" />
+        <item itemvalue="JUnit.SimpleSortTest.selectionSortStep" />
+        <item itemvalue="JUnit.SimpleSortTest.bubbleSortStep" />
       </list>
     </recent_temporary>
   </component>
@@ -170,12 +189,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SortLevelTest_selectionSortStep - 2019.06.20 at 14h 45m 01s.xml">
-      <configuration name="SortLevelTest.selectionSortStep" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SortLevelTest_selectionSortStep - 2019.06.20 at 14h 45m 57s.xml">
-      <configuration name="SortLevelTest.selectionSortStep" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SortLevelTest_selectionSortStep - 2019.06.20 at 14h 46m 40s.xml">
       <configuration name="SortLevelTest.selectionSortStep" configurationId="JUnit" />
     </history-entry>
@@ -194,10 +207,21 @@
     <history-entry file="SortLevelTest_bubbleSortStep - 2019.06.20 at 14h 50m 59s.xml">
       <configuration name="SortLevelTest.bubbleSortStep" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SimpleSortTest_selectionSort - 2019.06.21 at 10h 25m 24s.xml">
+      <configuration name="SimpleSortTest.selectionSort" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSortTest_selectionSort - 2019.06.21 at 10h 25m 49s.xml">
+      <configuration name="SimpleSortTest.selectionSort" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSortTest_selectionSort - 2019.06.21 at 10h 27m 27s.xml">
+      <configuration name="SimpleSortTest.selectionSort" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSortTest_selectionSort - 2019.06.21 at 10h 27m 40s.xml">
+      <configuration name="SimpleSortTest.selectionSort" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -235,20 +259,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/SortLevelTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/SimpleSortTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        <state relative-caret-position="306">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SortLevel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimpleSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="556">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
         </state>
       </provider>
     </entry>
