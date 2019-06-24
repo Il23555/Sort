@@ -30,6 +30,28 @@ public class SortLevel {
         return list;
     }
 
+    public static int ArrayChunk( int[] M ){
+        int index = M.length/2;
+        int N = M[index];
+        int i1 = 0; int i2 = M.length - 1;
+
+        while ((i1 != i2) || ((i1 == i2 - 1) && (M[i1] < M[i2]))){
+            while (M[i1] < N)
+                i1++;
+            while (M[i2] > N)
+                i2--;
+
+            if ((i1 == i2 - 1) && (M[i1] > M[i2])) {
+                swap(M,i1,i2);
+                i1 = 0; i2 = M.length - 1;
+                N = M[index];
+            }
+            if ((M[i1] >= N) && (M[i2] <= N))
+                swap(M, i1, i2);
+        }
+
+        return index;
+    }
 
     public static void swap(int[] arr, int fromIdx, int toIdx) {
         int a = arr[fromIdx];
