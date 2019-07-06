@@ -31,9 +31,9 @@ public class MergeSort {
 
             CurrentItem = MergeHeap.GetMax();
 
-            if ((CurrentItem.key == in1) && (i > 0))
+            if ((CurrentItem.key == in1) && (i >= 0))
                 MergeHeap.Add(in1,arr1[i--]);
-            if ((CurrentItem.key == in2) && (j > 0))
+            if ((CurrentItem.key == in2) && (j >= 0))
                 MergeHeap.Add(in2,arr2[j--]);
         }
         else {
