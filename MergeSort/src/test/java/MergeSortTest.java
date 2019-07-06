@@ -6,7 +6,9 @@ public class MergeSortTest {
     public void mergeSortStep() {
         int[] array = new int[] {9,14,12,5,4,10,20,18,25,13};
         MergeSort sort = new MergeSort(array);
+        assertEquals(0,sort.MergeHeap.Len());
         sort.MergeSortStep();
+        assertEquals(2,sort.MergeHeap.Len());
         assertEquals(25,sort.CurrentItem.value);
         sort.MergeSortStep();
         assertEquals(20,sort.CurrentItem.value);

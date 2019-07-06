@@ -54,7 +54,7 @@ class Heap {
     public HeapItem [] HeapArray; // хранит неотрицательные числа-ключи
 
     public Heap() {
-        HeapArray = new HeapItem[4];
+        HeapArray = new HeapItem[2];
     }
 
     //Просеивание вниз
