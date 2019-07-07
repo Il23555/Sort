@@ -1,48 +1,56 @@
 import java.util.Arrays;
 
 public class MergeSort {
-    Heap MergeHeap = new Heap();
+
+    Heap MergeHeap;
     HeapItem CurrentItem;
-    int[] arr1, arr2;
-    int i, j, in1 = 1, in2 = 2;
+    int[] Array_1, Array_2;
+    int in1 = 1, in2 = 2;
+    int i, j;
 
     public MergeSort (int[] MergeArray) {
+
+        MergeHeap = new Heap();
+
+        //разделяем на 2 подмассива
         int mid = MergeArray.length/2;
 
-        arr1 = new int[mid];
-        for (int i = 0; i < mid; i++) {
-            arr1[i] = MergeArray[i];
+        Array_1 = new int[mid];
+        for (int i = 0; i < Array_1.length; i++) {
+            Array_1[i] = MergeArray[i];
         }
-        Arrays.sort(arr1);
 
-        arr2 = new int[MergeArray.length - mid];
-        for (int i = 0; i < arr2.length; i++) {
-            arr2[i] = MergeArray[i + mid];
+        Array_2 = new int[MergeArray.length - mid];
+        for (int i = 0; i < Array_2.length; i++) {
+            Array_2[i] = MergeArray[i + mid];
         }
-        Arrays.sort(arr2);
 
-        i = arr1.length - 1; j = arr2.length - 1;
+        //сортируем и устанавливаем позиции в подмассивах
+        Arrays.sort(Array_1);
+        Arrays.sort(Array_2);
+
+        i = Array_1.length - 1;
+        j = Array_2.length - 1;
     }
 
     public void MergeSortStep () {
+
         if ((i >= 0) && (j >= 0)) {
-            MergeHeap.Add(in1, arr1[i--]);
-            MergeHeap.Add(in2, arr2[j--]);
+            MergeHeap.Add(in1, Array_1[i--]);
+            MergeHeap.Add(in2, Array_2[j--]);
 
             CurrentItem = MergeHeap.GetMax();
 
             if ((CurrentItem.key == in1) && (i >= 0))
-                MergeHeap.Add(in1,arr1[i--]);
+                MergeHeap.Add(in1,Array_1[i--]);
             if ((CurrentItem.key == in2) && (j >= 0))
-                MergeHeap.Add(in2,arr2[j--]);
+                MergeHeap.Add(in2,Array_2[j--]);
         }
         else {
-            while (MergeHeap.Len() != 0)
-                CurrentItem = MergeHeap.GetMax();
-            while (j >= 0)
-                CurrentItem = new HeapItem(in2, arr2[j--]);
             while (i >= 0)
-                CurrentItem = new HeapItem(in1, arr1[i--]);
+                CurrentItem = new HeapItem(in1, Array_1[i--]);
+            while (j >= 0)
+                CurrentItem = new HeapItem(in2, Array_2[j--]);
             CurrentItem = null;
         }
     }
@@ -51,10 +59,12 @@ public class MergeSort {
 
 class Heap {
 
-    public HeapItem [] HeapArray; // хранит неотрицательные числа-ключи
+    public HeapItem[] HeapArray; // хранит неотрицательные числа-ключи
+    public int Count;
 
     public Heap() {
         HeapArray = new HeapItem[2];
+        Count = 0;
     }
 
     //Просеивание вниз
@@ -99,6 +109,7 @@ class Heap {
         if (index != HeapArray.length){
             HeapItem Item = new HeapItem(key,value);
             HeapArray[index] = Item;
+            Count++;
             SiftUp(index);
             return true;
         }
@@ -120,6 +131,7 @@ class Heap {
             HeapItem temp = HeapArray[0];
             HeapArray[0] = HeapArray[index];
             HeapArray[index] = null;
+            Count--;
             SiftDown(0);
             return temp;
         }
@@ -128,13 +140,7 @@ class Heap {
     }
 
     public int Len() {
-        int index = HeapArray.length - 1;
-        while ((index >= 0) && (HeapArray[index] == null)) {
-            index--;
-        }
-        index++;
-
-        return index;
+        return Count;
     }
 }
 
