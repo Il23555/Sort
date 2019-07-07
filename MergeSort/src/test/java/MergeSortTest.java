@@ -20,14 +20,14 @@ public class MergeSortTest {
         assertEquals(1,sort1.MergeHeap.Len());
         assertEquals(9,sort1.CurrentItem.value);
 
-        int[] arr2 = new int[] {7,6,8,5,4};
+        int[] arr2 = new int[] {8,7,6,10,9,5,4};
         MergeSort sort2 = new MergeSort(arr2);
         sort2.MergeSortStep();
         assertEquals(2,sort2.MergeHeap.Len());
-        assertEquals(8,sort2.CurrentItem.value);
+        assertEquals(10,sort2.CurrentItem.value);
         sort2.MergeSortStep();
-        assertEquals(3,sort2.MergeHeap.Len());
-        assertEquals(7,sort2.CurrentItem.value);
+        assertEquals(4,sort2.MergeHeap.Len());
+        assertEquals(9,sort2.CurrentItem.value);
 
         int[] arr3 = new int[]{2,3,6,5,9,10};
         MergeSort sort4 = new MergeSort(arr3);

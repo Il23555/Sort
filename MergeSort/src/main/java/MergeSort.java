@@ -4,55 +4,45 @@ public class MergeSort {
 
     Heap MergeHeap;
     HeapItem CurrentItem;
-    int[] Array_1, Array_2;
+    int[] MergeArray;
     int in1 = 1, in2 = 2;
-    int i, j;
+    int i, j, mid;
 
-    public MergeSort (int[] MergeArray) {
+    public MergeSort (int[] array) {
 
         MergeHeap = new Heap();
+        MergeArray = array;
 
-        //разделяем на 2 подмассива
-        int mid = MergeArray.length/2;
+        //разделяем на 2 подмассива, устанавливаем позиции
+        mid = MergeArray.length/2;
+        i = mid - 1;
+        j = MergeArray.length - 1;
 
-        Array_1 = new int[mid];
-        for (int i = 0; i < Array_1.length; i++) {
-            Array_1[i] = MergeArray[i];
-        }
-
-        Array_2 = new int[MergeArray.length - mid];
-        for (int i = 0; i < Array_2.length; i++) {
-            Array_2[i] = MergeArray[i + mid];
-        }
-
-        //сортируем и устанавливаем позиции в подмассивах
-        Arrays.sort(Array_1);
-        Arrays.sort(Array_2);
-
-        i = Array_1.length - 1;
-        j = Array_2.length - 1;
+        //сортируем
+        Arrays.sort(MergeArray,0, mid);
+        Arrays.sort(MergeArray, mid, MergeArray.length);
     }
 
     public void MergeSortStep () {
 
-        if ((i >= 0) && (j >= 0)) {
-            MergeHeap.Add(in1, Array_1[i--]);
-            MergeHeap.Add(in2, Array_2[j--]);
+        if ((i >= 0) && (j >= mid)) {
+            MergeHeap.Add(in1, MergeArray[i--]);
+            MergeHeap.Add(in2, MergeArray[j--]);
 
             CurrentItem = MergeHeap.GetMax();
 
             if ((CurrentItem.key == in1) && (i >= 0))
-                MergeHeap.Add(in1,Array_1[i--]);
-            if ((CurrentItem.key == in2) && (j >= 0))
-                MergeHeap.Add(in2,Array_2[j--]);
+                MergeHeap.Add(in1, MergeArray[i--]);
+            if ((CurrentItem.key == in2) && (j >= mid))
+                MergeHeap.Add(in2, MergeArray[j--]);
         }
         else {
             while (MergeHeap.Len() != 0)
                 CurrentItem = MergeHeap.GetMax();
             while (i >= 0)
-                CurrentItem = new HeapItem(in1, Array_1[i--]);
-            while (j >= 0)
-                CurrentItem = new HeapItem(in2, Array_2[j--]);
+                CurrentItem = new HeapItem(in1, MergeArray[i--]);
+            while (j >= mid)
+                CurrentItem = new HeapItem(in2, MergeArray[j--]);
             CurrentItem = null;
         }
     }
