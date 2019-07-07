@@ -47,6 +47,8 @@ public class MergeSort {
                 MergeHeap.Add(in2,Array_2[j--]);
         }
         else {
+            while (MergeHeap.Len() != 0)
+                CurrentItem = MergeHeap.GetMax();
             while (i >= 0)
                 CurrentItem = new HeapItem(in1, Array_1[i--]);
             while (j >= 0)
@@ -63,7 +65,7 @@ class Heap {
     public int Count;
 
     public Heap() {
-        HeapArray = new HeapItem[2];
+        HeapArray = new HeapItem[100];
         Count = 0;
     }
 
@@ -99,21 +101,16 @@ class Heap {
 
     public boolean Add(int key, int value) // добавляем новый элемент key в кучу и перестраиваем её
     {
-        //найти последний пустой слот
-        int index = HeapArray.length - 1;
-        while ((index >= 0) && (HeapArray[index] == null)){
-            index--;
-        }
-        index++;
+        int index = Count;
 
         if (index != HeapArray.length){
             HeapItem Item = new HeapItem(key,value);
             HeapArray[index] = Item;
             Count++;
             SiftUp(index);
-            return true;
         }
-        return false; // если куча вся заполнена
+
+        return (index != HeapArray.length); // если куча вся заполнена
     }
 
     public HeapItem GetMax()// вернуть значение корня и перестроить кучу
@@ -122,10 +119,7 @@ class Heap {
             return null;
 
         //найти последний элемент
-        int index = HeapArray.length - 1;
-        while ((index >= 0) && (HeapArray[index] == null)) {
-            index--;
-        }
+        int index = Count - 1;
 
         if (index >= 0){
             HeapItem temp = HeapArray[0];
