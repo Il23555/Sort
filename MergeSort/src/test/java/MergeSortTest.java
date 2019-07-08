@@ -5,7 +5,7 @@ public class MergeSortTest {
     @org.junit.Test
     public void mergeSortStep() {
 
-        int[] arr1 = new int[] {9,14,12,5,4,10,20,18,25,13};
+        int[] arr1 = new int[] {4,5,9,12,14,10,13,18,25,20};
         MergeSort sort = new MergeSort(arr1);
         assertEquals(0,sort.MergeHeap.Len());
         sort.MergeSortStep();

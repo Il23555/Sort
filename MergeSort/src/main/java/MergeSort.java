@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MergeSort {
 
@@ -15,34 +16,49 @@ public class MergeSort {
 
         //разделяем на 2 подмассива, устанавливаем позиции
         mid = MergeArray.length/2;
-        i = mid - 1;
-        j = MergeArray.length - 1;
+        i = 0; j = mid;
 
         //сортируем
-        Arrays.sort(MergeArray,0, mid);
+        Arrays.sort(MergeArray, 0, mid);
         Arrays.sort(MergeArray, mid, MergeArray.length);
+
+        //переворачиваем
+        int m = mid/2;
+        for (int k = 0; k < m; k++) {
+            int temp = MergeArray[k];
+            MergeArray[k] = MergeArray[mid - 1 - k];
+            MergeArray[mid - 1 - k] = temp;
+        }
+
+        m = (MergeArray.length + mid)/2;
+        for (int k = mid; k < m; k++) {
+            int temp = MergeArray[k];
+            MergeArray[k] = MergeArray[MergeArray.length - 1 - k + mid];
+            MergeArray[MergeArray.length - 1 - k + mid] = temp;
+        }
+
     }
 
     public void MergeSortStep () {
 
-        if ((i >= 0) && (j >= mid)) {
-            MergeHeap.Add(in1, MergeArray[i--]);
-            MergeHeap.Add(in2, MergeArray[j--]);
+        if ((i < mid) && (j < MergeArray.length)) {
+            MergeHeap.Add(in1, MergeArray[i++]);
+            MergeHeap.Add(in2, MergeArray[j++]);
 
             CurrentItem = MergeHeap.GetMax();
 
-            if ((CurrentItem.key == in1) && (i >= 0))
-                MergeHeap.Add(in1, MergeArray[i--]);
-            if ((CurrentItem.key == in2) && (j >= mid))
-                MergeHeap.Add(in2, MergeArray[j--]);
+            if ((CurrentItem.key == in1) && (i < mid))
+                MergeHeap.Add(in1, MergeArray[i++]);
+            if ((CurrentItem.key == in2) && (j < MergeArray.length))
+                MergeHeap.Add(in2, MergeArray[j++]);
         }
         else {
             while (MergeHeap.Len() != 0)
                 CurrentItem = MergeHeap.GetMax();
-            while (i >= 0)
-                CurrentItem = new HeapItem(in1, MergeArray[i--]);
-            while (j >= mid)
-                CurrentItem = new HeapItem(in2, MergeArray[j--]);
+            while (i < mid)
+                CurrentItem = new HeapItem(in1, MergeArray[i++]);
+            while (j < MergeArray.length)
+                CurrentItem = new HeapItem(in2, MergeArray[j++]);
             CurrentItem = null;
         }
     }
