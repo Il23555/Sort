@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Collections;
 
 public class MergeSort {
 
@@ -53,13 +52,21 @@ public class MergeSort {
                 MergeHeap.Add(in2, MergeArray[j++]);
         }
         else {
-            while (MergeHeap.Len() != 0)
+            if (MergeHeap.Len() != 0) {
                 CurrentItem = MergeHeap.GetMax();
-            while (i < mid)
-                CurrentItem = new HeapItem(in1, MergeArray[i++]);
-            while (j < MergeArray.length)
-                CurrentItem = new HeapItem(in2, MergeArray[j++]);
-            CurrentItem = null;
+                if ((CurrentItem.key == in1) && (i < mid))
+                    MergeHeap.Add(in1, MergeArray[i++]);
+                if ((CurrentItem.key == in2) && (j < MergeArray.length))
+                    MergeHeap.Add(in2, MergeArray[j++]);
+            }
+            else {
+                if (i < mid)
+                    CurrentItem = new HeapItem(in1, MergeArray[i++]);
+                else if (j < MergeArray.length)
+                    CurrentItem = new HeapItem(in2, MergeArray[j++]);
+                else
+                    CurrentItem = null;
+            }
         }
     }
 
