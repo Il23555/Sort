@@ -41,10 +41,10 @@ public class MergeSort {
     public void MergeSortStep () {
 
         if (i < mid)
-            MergeHeap.Add(in1, MergeArray[i++]);
+            MergeHeap.Add(MergeArray[i++], in1);
 
         if (j < MergeArray.length)
-            MergeHeap.Add(in2, MergeArray[j++]);
+            MergeHeap.Add(MergeArray[j++], in2);
 
         if (MergeHeap.Len() > 0)
             CurrentItem = MergeHeap.GetMax();
@@ -68,9 +68,9 @@ class Heap {
     private void SiftDown(int index){
         int largest = index;
 
-        if ((2*index + 1 < HeapArray.length) && (HeapArray[2*index + 1] != null) && (HeapArray[largest].value < HeapArray[2*index + 1].value))
+        if ((2*index + 1 < HeapArray.length) && (HeapArray[2*index + 1] != null) && (HeapArray[largest].key < HeapArray[2*index + 1].key))
             largest = 2*index + 1;
-        if ((2*index + 2 < HeapArray.length) && (HeapArray[2*index + 2] != null) && (HeapArray[largest].value < HeapArray[2*index + 2].value))
+        if ((2*index + 2 < HeapArray.length) && (HeapArray[2*index + 2] != null) && (HeapArray[largest].key < HeapArray[2*index + 2].key))
             largest = 2*index + 2;
 
         if (largest != index){
@@ -85,7 +85,7 @@ class Heap {
     //Проталкивание элемента вверх
     private void SiftUp(int index){
         int parent = (index - 1)/2;
-        if ((index > 0) && (HeapArray[index].value >= HeapArray[parent].value)) {
+        if ((index > 0) && (HeapArray[index].key >= HeapArray[parent].key)) {
             HeapItem temp = HeapArray[index];
             HeapArray[index] = HeapArray[parent];
             HeapArray[parent] = temp;
