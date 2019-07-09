@@ -4,26 +4,6 @@ public class MergeSortTest {
 
     @org.junit.Test
     public void mergeSortStep() {
-
-        int[] arr1 = new int[] {4,5,9,12,14,10,13,18,25,20};
-        MergeSort sort = new MergeSort(arr1);
-        assertEquals(0,sort.MergeHeap.Len());
-        sort.MergeSortStep();
-        assertEquals(2,sort.MergeHeap.Len());
-        assertEquals(25,sort.CurrentItem.value);
-        sort.MergeSortStep();
-        assertEquals(20,sort.CurrentItem.value);
-        sort.MergeSortStep();
-        assertEquals(18,sort.CurrentItem.value);
-        sort.MergeSortStep();
-        assertEquals(14,sort.CurrentItem.value);
-        sort.MergeSortStep();
-        assertEquals(13,sort.CurrentItem.value);
-        sort.MergeSortStep();
-        assertEquals(12,sort.CurrentItem.value);
-        sort.MergeSortStep();
-        assertEquals(10,sort.CurrentItem.value);
-
         int[] arr = new int[] {9,4,5};
         MergeSort sort1 = new MergeSort(arr);
         sort1.MergeSortStep();
@@ -59,16 +39,19 @@ public class MergeSortTest {
 
         int[] arr3 = new int[]{2,3,6,5,9,10};
         MergeSort sort4 = new MergeSort(arr3);
-        sort4.MergeHeap.Add(1,2);
-        sort4.MergeHeap.Add(2,5);
-        assertEquals(2,sort4.MergeHeap.Len());
-        sort4.MergeHeap.Add(1,3);
-        sort4.MergeHeap.Add(1,6);
-        sort4.MergeHeap.Add(1,9);
-        assertEquals(5,sort4.MergeHeap.Len());
-        sort4.MergeHeap.GetMax();
-        assertEquals(4,sort4.MergeHeap.Len());
-        sort4.MergeHeap.GetMax();
-        assertEquals(3,sort4.MergeHeap.Len());
+        sort4.MergeSortStep();
+        assertEquals(10,sort4.CurrentItem.value);
+        sort4.MergeSortStep();
+        assertEquals(9,sort4.CurrentItem.value);
+        sort4.MergeSortStep();
+        assertEquals(6,sort4.CurrentItem.value);
+        sort4.MergeSortStep();
+        assertEquals(5,sort4.CurrentItem.value);
+        sort4.MergeSortStep();
+        assertEquals(3,sort4.CurrentItem.value);
+        sort4.MergeSortStep();
+        assertEquals(2,sort4.CurrentItem.value);
+        sort4.MergeSortStep();
+        assertEquals(null,sort4.CurrentItem);
     }
 }
