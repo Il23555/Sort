@@ -4,7 +4,7 @@ public class MergeSortTest {
 
     @org.junit.Test
     public void mergeSortStep() {
-        int[] arr = new int[] {9,4,5};
+        /*int[] arr = new int[] {9,4,5};
         MergeSort sort1 = new MergeSort(arr);
         sort1.MergeSortStep();
         assertEquals(1,sort1.MergeHeap.Len());
@@ -36,21 +36,23 @@ public class MergeSortTest {
         assertEquals(4,sort2.CurrentItem.value);
         sort2.MergeSortStep();
         assertEquals(null,sort2.CurrentItem);
-
-        int[] arr3 = new int[]{2,3,6,5,9,10};
+*/
+        int[] arr3 = new int[]{1,2,3,4,5,6,7};
         MergeSort sort4 = new MergeSort(arr3);
         sort4.MergeSortStep();
-        assertEquals(10,sort4.CurrentItem.value);
-        sort4.MergeSortStep();
-        assertEquals(9,sort4.CurrentItem.value);
+        assertEquals(7,sort4.CurrentItem.value);
         sort4.MergeSortStep();
         assertEquals(6,sort4.CurrentItem.value);
         sort4.MergeSortStep();
         assertEquals(5,sort4.CurrentItem.value);
         sort4.MergeSortStep();
+        assertEquals(4,sort4.CurrentItem.value);
+        sort4.MergeSortStep();
         assertEquals(3,sort4.CurrentItem.value);
         sort4.MergeSortStep();
         assertEquals(2,sort4.CurrentItem.value);
+        sort4.MergeSortStep();
+        assertEquals(1,sort4.CurrentItem.value);
         sort4.MergeSortStep();
         assertEquals(null,sort4.CurrentItem);
     }

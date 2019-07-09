@@ -40,27 +40,16 @@ public class MergeSort {
 
     public void MergeSortStep () {
 
-        if ((i < mid) && (j < MergeArray.length)) {
+        if (i < mid)
             MergeHeap.Add(in1, MergeArray[i++]);
+
+        if (j < MergeArray.length)
             MergeHeap.Add(in2, MergeArray[j++]);
-        }
 
-        if (MergeHeap.Len() > 0) {
+        if (MergeHeap.Len() > 0)
             CurrentItem = MergeHeap.GetMax();
-            if ((CurrentItem.key == in1) && (i < mid))
-                MergeHeap.Add(in1, MergeArray[i++]);
-            if ((CurrentItem.key == in2) && (j < MergeArray.length))
-                MergeHeap.Add(in2, MergeArray[j++]);
-        }
-        else {
-            if (i < mid)
-                CurrentItem = new HeapItem(in1, MergeArray[i++]);
-            else if (j < MergeArray.length)
-                CurrentItem = new HeapItem(in2, MergeArray[j++]);
-            else
-                CurrentItem = null;
-        }
-
+        else
+            CurrentItem = null;
     }
 
 }
