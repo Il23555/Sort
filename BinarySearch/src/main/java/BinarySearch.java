@@ -11,7 +11,7 @@ public class BinarySearch {
     }
 
     public void Step(int key) {
-        int mid = (Left + Right) / 2;
+        int mid = (Left + Right + 1) / 2;
 
         if (Array[mid] == key)
             Find = true;
