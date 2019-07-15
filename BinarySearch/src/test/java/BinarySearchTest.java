@@ -22,8 +22,8 @@ public class BinarySearchTest {
         assertEquals(0,search1.Left);
         assertEquals(5,search1.Right);
         search1.Step(4);
-        assertEquals(0,search1.Left);
-        assertEquals(5,search1.Right);
+        assertEquals(3,search1.Left);
+        assertEquals(3,search1.Right);
         assertEquals(1,search1.GetResult());
 
         int[] a2 = new int[] {1,2,3,4,5,6};
@@ -39,6 +39,8 @@ public class BinarySearchTest {
         assertEquals(4,search2.Right);
         assertEquals(0,search2.GetResult());
         search2.Step(5);
+        assertEquals(4,search2.Left);
+        assertEquals(4,search2.Right);
         assertEquals(1,search2.GetResult());
 
         int[] a3 = new int[] {1,2,3,4,5,6};
@@ -50,6 +52,8 @@ public class BinarySearchTest {
         assertEquals(5,search3.Right);
         assertEquals(0,search3.GetResult());
         search3.Step(6);
+        assertEquals(5,search3.Left);
+        assertEquals(5,search3.Right);
         assertEquals(1,search3.GetResult());
 
         int[] a4 = new int[] {1,2,3,4,5,6};
@@ -65,6 +69,8 @@ public class BinarySearchTest {
         assertEquals(2,search4.Right);
         assertEquals(0,search4.GetResult());
         search4.Step(3);
+        assertEquals(2,search4.Left);
+        assertEquals(2,search4.Right);
         assertEquals(1,search4.GetResult());
 
         int[] a5 = new int[]{1,1,1,2,5,7,8,12,15,18,25};
